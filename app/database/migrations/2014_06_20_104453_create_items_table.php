@@ -15,7 +15,7 @@ class CreateItemsTable extends Migration {
             Schema::create('items', function(Blueprint $table){
                 $table->increments('id');
                 $table->integer('owner_id');
-                $table->string('nsme');
+                $table->string('name');
                 $table->boolean('done');
                 $table->timestamps();
             });
