@@ -8,4 +8,17 @@ class HomeController extends BaseController {
                'items' => $items
            ));           
 	}
+        
+        public function postIndex() {
+            $id = Input::get('id');
+            $userID = Auth::user()->id;
+            
+            $item = Item::findOrFail($id);
+            
+            if ($item->owner_id === $userID) {
+            $item->mark();
+            }
+            
+            return Redirect::route('home');
+        }
 }

@@ -7,7 +7,14 @@
         @foreach ($items as $item)
         <li>
             {{ Form::open() }}
-                <input type="checkbox" name="item" value="{{ $item->id }}" {{ $item->done ? 'checked' : '' }} />
+                <input 
+                    type="checkbox" 
+                    onClick="this.form.submit()"
+                    {{ $item->done ? 'checked' : '' }} 
+                />
+                
+                <input type="hidden" name="id" value="{{ $item->id }}" />
+                
                 {{ $item->name }}
             {{ Form::close() }}
         </li>
