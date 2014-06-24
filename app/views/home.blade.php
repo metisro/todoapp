@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <h1>Your Items</h1>
+<h1>Your Items<small>(<a href="{{ URL::route('new') }}">New task</a>)</small></h1>
     
     <ul>
         @foreach ($items as $item)
