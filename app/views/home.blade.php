@@ -15,7 +15,7 @@
                 
                 <input type="hidden" name="id" value="{{ $item->id }}" />
                 
-                {{ $item->name }} <small>(<a href="{{ URL::route('delete', $item->id) }}">x</a>)</small>
+                {{ e($item->name) }} <small>(<a href="{{ URL::route('delete', $item->id) }}">x</a>)</small>
             {{ Form::close() }}
         </li>
         @endforeach
