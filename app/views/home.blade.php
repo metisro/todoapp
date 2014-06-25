@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<h1>Your Items<small>(<a href="{{ URL::route('new') }}">New task</a>)</small></h1>
+<h1>Your Items <small>(<a href="{{ URL::route('new') }}">New task</a>)</small></h1>
     
     <ul>
         @foreach ($items as $item)
@@ -15,7 +15,7 @@
                 
                 <input type="hidden" name="id" value="{{ $item->id }}" />
                 
-                {{ $item->name }}
+                {{ $item->name }} <small>(<a href="{{ URL::route('delete', $item->id) }}">x</a>)</small>
             {{ Form::close() }}
         </li>
         @endforeach

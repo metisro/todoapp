@@ -41,4 +41,10 @@ class HomeController extends BaseController {
             
             return Redirect::route('home');
         }
+        
+        public function getDelete(Item $task) {
+                $task->delete();
+                
+                return Redirect::route('home');
+        }
 }
